@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Docs
+
+* 📝 Update README badge styles and unwrap paragraphs. PR [#8](https://github.com/mat81black/fastapi-csp-docs/pull/8) by [@mat81black](https://github.com/mat81black).
+
 ## 0.1.0 (2026-07-08)
 
 🚀 First official public release of **fastapi-csp-docs**.
