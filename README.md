@@ -1,9 +1,9 @@
 # FastAPI CSP Docs
 
-[![PyPI version](https://img.shields.io/pypi/v/fastapi-csp-docs.svg)](https://pypi.org/project/fastapi-csp-docs/)
-[![Test](https://github.com/mat81black/fastapi-csp-docs/actions/workflows/test.yml/badge.svg)](https://github.com/mat81black/fastapi-csp-docs/actions/workflows/test.yml)
-[![Python versions](https://img.shields.io/pypi/pyversions/fastapi-csp-docs.svg)](https://pypi.org/project/fastapi-csp-docs/)
-[![License: MIT](https://img.shields.io/pypi/l/fastapi-csp-docs.svg)](https://github.com/mat81black/fastapi-csp-docs/blob/main/LICENSE)
+[![Build Status](https://github.com/mat81black/fastapi-csp-docs/workflows/Test/badge.svg)](https://github.com/mat81black/fastapi-csp-docs/actions)
+[![Package version](https://badge.fury.io/py/fastapi-csp-docs.svg)](https://pypi.org/project/fastapi-csp-docs/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/fastapi-csp-docs.svg?color=%2334D058)](https://pypi.org/project/fastapi-csp-docs/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 FastAPI's built-in `/docs`, `/redoc`, and OAuth2 redirect pages embed inline `<script>`/`<style>` tags, so they break under a Content-Security-Policy without `'unsafe-inline'`. Following FastAPI's own ["Custom Docs UI Static Assets"](https://fastapi.tiangolo.com/how-to/custom-docs-ui-assets/) recipe only swaps the CDN URLs for local ones; it doesn't remove any inline content: `get_swagger_ui_html()` still embeds the Swagger UI bootstrap script inline, `get_redoc_html()` still embeds a `<style>` reset inline, and `get_swagger_ui_oauth2_redirect_html()` still embeds the OAuth2 redirect logic inline. `fastapi-csp-docs` replaces all three pages with versions that load every script and stylesheet from a separate endpoint, with no inline content anywhere.
 
