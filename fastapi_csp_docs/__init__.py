@@ -8,10 +8,9 @@ from fastapi_csp_docs.docs import (
 )
 from fastapi_csp_docs.setup import setup
 
-__version__ = "0.1.0"
+__version__ = "0.0.0"
 
 __all__ = [
-    "__version__",
     "get_redoc_css",
     "get_redoc_html",
     "get_swagger_ui_html",
