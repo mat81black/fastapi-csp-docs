@@ -1,14 +1,22 @@
 docs:
-  - changed-files:
-    - any-glob-to-any-file:
-      - README.md
-      - RELEASE_NOTES.md
+  - all:
+    - changed-files:
+      - any-glob-to-any-file:
+        - README.md
+        - RELEASE_NOTES.md
+      - all-globs-to-all-files:
+        - '!fastapi_csp_docs/**'
+        - '!pyproject.toml'
 
 internal:
-  - changed-files:
-    - any-glob-to-any-file:
-      - .github/**
-      - scripts/**
-      - .gitignore
-      - .pre-commit-config.yaml
-      - uv.lock
+  - all:
+    - changed-files:
+      - any-glob-to-any-file:
+        - .github/**
+        - scripts/**
+        - .gitignore
+        - .pre-commit-config.yaml
+        - uv.lock
+      - all-globs-to-all-files:
+        - '!fastapi_csp_docs/**'
+        - '!pyproject.toml'
