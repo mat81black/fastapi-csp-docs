@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 0.1.1 (2026-07-08)
+
 🚀 First official public release of **fastapi-csp-docs**.
 
 FastAPI's built-in `/docs`, `/redoc`, and OAuth2 redirect pages embed inline `<script>`/`<style>`
