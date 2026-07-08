@@ -7,7 +7,7 @@
 🚀 First official public release of **fastapi-csp-docs**.
 
 FastAPI's built-in `/docs`, `/redoc`, and OAuth2 redirect pages embed inline `<script>`/`<style>`
-tags, breaking any Content-Security-Policy without `'unsafe-inline'` — even FastAPI's own
+tags, breaking any Content-Security-Policy without `'unsafe-inline'`. Even FastAPI's own
 ["Custom Docs UI Static Assets"](https://fastapi.tiangolo.com/how-to/custom-docs-ui-assets/)
 recipe only swaps CDN URLs for local ones, without removing that inline content.
 `fastapi-csp-docs` replaces all three pages with versions that load every script and stylesheet
@@ -28,5 +28,5 @@ from a separate endpoint.
   `get_redoc_css`, `get_swagger_ui_oauth2_redirect_html`, `get_swagger_ui_oauth2_redirect_js`)
   exported for manual wiring, enabling a fully self-hosted setup with no CDN at all.
 * ✨ `get_redoc_html(disable_search=True)`: disables ReDoc's client-side search box, avoiding
-  the Web Worker it runs in — which otherwise needs `worker-src 'self' blob:` in the CSP, since
+  the Web Worker it runs in, which otherwise needs `worker-src 'self' blob:` in the CSP, since
   the worker is instantiated from a `blob:` URL with no separate file to point at instead.
