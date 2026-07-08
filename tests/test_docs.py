@@ -57,6 +57,18 @@ def test_get_swagger_ui_init_js_omits_oauth2_redirect_url_when_none():
     assert "oauth2RedirectUrl" not in js
 
 
+def test_get_swagger_ui_init_js_includes_init_oauth_when_set():
+    js = bytes(
+        fastapi_csp_docs.get_swagger_ui_init_js(
+            openapi_url="/openapi.json",
+            init_oauth={"clientId": "my-client-id"},
+        ).body
+    ).decode()
+
+    assert "ui.initOAuth(" in js
+    assert "my-client-id" in js
+
+
 def test_get_swagger_ui_init_js_escapes_html_special_characters():
     js = bytes(
         fastapi_csp_docs.get_swagger_ui_init_js(
