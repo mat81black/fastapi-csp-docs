@@ -1,6 +1,7 @@
 # FastAPI CSP Docs
 
 [![Build Status](https://github.com/mat81black/fastapi-csp-docs/workflows/Test/badge.svg)](https://github.com/mat81black/fastapi-csp-docs/actions)
+[![codecov](https://codecov.io/gh/mat81black/fastapi-csp-docs/graph/badge.svg)](https://codecov.io/gh/mat81black/fastapi-csp-docs)
 [![Package version](https://badge.fury.io/py/fastapi-csp-docs.svg)](https://pypi.org/project/fastapi-csp-docs/)
 [![Supported Python versions](https://img.shields.io/pypi/pyversions/fastapi-csp-docs.svg?color=%2334D058)](https://pypi.org/project/fastapi-csp-docs/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
