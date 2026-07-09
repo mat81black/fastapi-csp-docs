@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* 🔧 Integrate Codecov for coverage tracking and update README. PR [#10](https://github.com/mat81black/fastapi-csp-docs/pull/10) by [@mat81black](https://github.com/mat81black).
+
 ## 0.1.1 (2026-07-08)
 
 ### Docs
