@@ -4,7 +4,7 @@ from typing import Any
 
 from fastapi.encoders import jsonable_encoder
 from fastapi.openapi.docs import swagger_ui_default_parameters
-from starlette.responses import HTMLResponse, Response
+from fastapi.responses import HTMLResponse, Response
 
 
 def _html_safe_json(value: Any) -> str:
