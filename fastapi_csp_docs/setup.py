@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from starlette.requests import Request
-from starlette.responses import HTMLResponse, Response
+from fastapi.requests import Request
+from fastapi.responses import HTMLResponse, Response
 
 from fastapi_csp_docs.docs import (
     get_redoc_css,
