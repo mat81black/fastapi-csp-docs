@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 0.1.3 (2026-07-10)
+
 ### Refactors
 
 * ♻️ Align imports with FastAPI's public dependency contract. PR [#13](https://github.com/mat81black/fastapi-csp-docs/pull/13) by [@mat81black](https://github.com/mat81black).
