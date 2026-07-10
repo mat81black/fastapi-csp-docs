@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* 🔧 Add test coverage for setup()'s openapi and root_path edge cases. PR [#12](https://github.com/mat81black/fastapi-csp-docs/pull/12) by [@mat81black](https://github.com/mat81black).
+
 ## 0.1.2 (2026-07-09)
 
 ### Internal
