@@ -133,6 +133,22 @@ def test_setup_no_routes_when_openapi_disabled():
     assert client.get("/redoc").status_code == 404
 
 
+def test_setup_openapi_disabled_skips_docs_url_only():
+    app = FastAPI(openapi_url=None, docs_url=None, redoc_url=None)
+    fastapi_csp_docs.setup(app, redoc_url=None)
+    client = TestClient(app)
+
+    assert client.get("/docs").status_code == 404
+
+
+def test_setup_openapi_disabled_skips_redoc_url_only():
+    app = FastAPI(openapi_url=None, docs_url=None, redoc_url=None)
+    fastapi_csp_docs.setup(app, docs_url=None)
+    client = TestClient(app)
+
+    assert client.get("/redoc").status_code == 404
+
+
 def test_setup_root_path_is_reflected_in_mounted_sub_app():
     sub_app = FastAPI(docs_url=None, redoc_url=None)
     fastapi_csp_docs.setup(sub_app)
@@ -143,6 +159,7 @@ def test_setup_root_path_is_reflected_in_mounted_sub_app():
     client = TestClient(parent_app)
     js = client.get("/api/docs/swagger-initializer.js").text
     assert "/api/openapi.json" in js
+    assert "/api/docs/oauth2-redirect" in js
 
     redoc_html = client.get("/api/redoc").text
     assert "/api/openapi.json" in redoc_html
