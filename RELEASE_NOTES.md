@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Refactors
+
+* ♻️ Align imports with FastAPI's public dependency contract. PR [#13](https://github.com/mat81black/fastapi-csp-docs/pull/13) by [@mat81black](https://github.com/mat81black).
+
 ### Internal
 
 * 🔧 Add test coverage for setup()'s openapi and root_path edge cases. PR [#12](https://github.com/mat81black/fastapi-csp-docs/pull/12) by [@mat81black](https://github.com/mat81black).
