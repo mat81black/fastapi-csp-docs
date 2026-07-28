@@ -4,6 +4,7 @@
 
 ### Internal
 
+* 👷 Replace Dependabot pre-commit ecosystem with custom bump workflow. PR [#19](https://github.com/mat81black/fastapi-csp-docs/pull/19) by [@mat81black](https://github.com/mat81black).
 * ⬆ Bump the python-packages group with 5 updates. PR [#18](https://github.com/mat81black/fastapi-csp-docs/pull/18) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump zizmorcore/zizmor-action from 0.5.7 to 0.6.0 in the github-actions group. PR [#17](https://github.com/mat81black/fastapi-csp-docs/pull/17) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump https://github.com/crate-ci/typos from v1.48.0 to 5.0.7 in the pre-commit group. PR [#15](https://github.com/mat81black/fastapi-csp-docs/pull/15) by [@dependabot[bot]](https://github.com/apps/dependabot).
