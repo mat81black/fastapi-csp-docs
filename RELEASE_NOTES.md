@@ -3,6 +3,7 @@
 ## Latest Changes
 
 ## 1.0.0 (2026-07-28)
+🎉 First stable release of fastapi-csp-docs.
 
 ## 0.1.4 (2026-07-28)
 
