@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 0.1.4 (2026-07-28)
+
 ### Internal
 
 * ⬆ Bump fastapi from 0.139.0 to 0.139.2. PR [#23](https://github.com/mat81black/fastapi-csp-docs/pull/23) by [@dependabot[bot]](https://github.com/apps/dependabot).
