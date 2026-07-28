@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump the python-packages group with 4 updates. PR [#22](https://github.com/mat81black/fastapi-csp-docs/pull/22) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump pre-commit hooks. PR [#20](https://github.com/mat81black/fastapi-csp-docs/pull/20) by [@mat81black](https://github.com/mat81black).
 * 👷 Replace Dependabot pre-commit ecosystem with custom bump workflow. PR [#19](https://github.com/mat81black/fastapi-csp-docs/pull/19) by [@mat81black](https://github.com/mat81black).
 * ⬆ Bump the python-packages group with 5 updates. PR [#18](https://github.com/mat81black/fastapi-csp-docs/pull/18) by [@dependabot[bot]](https://github.com/apps/dependabot).
