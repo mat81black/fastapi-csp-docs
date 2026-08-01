@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump the python-packages group with 5 updates. PR [#27](https://github.com/mat81black/fastapi-csp-docs/pull/27) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump zizmorcore/zizmor-action from 0.6.0 to 0.6.1 in the github-actions group. PR [#26](https://github.com/mat81black/fastapi-csp-docs/pull/26) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
 ## 1.0.0 (2026-07-28)
