@@ -73,12 +73,14 @@ def test_get_swagger_ui_init_js_escapes_html_special_characters():
     js = bytes(
         fastapi_csp_docs.get_swagger_ui_init_js(
             openapi_url="/openapi.json",
-            swagger_ui_parameters={"customCss": "</script><script>alert(1)</script>"},
+            swagger_ui_parameters={"customCss": "</script><script>alert(1)&alert(2)</script>"},
         ).body
     ).decode()
 
     assert "</script><script>" not in js
+    assert "alert(1)&alert(2)" not in js
     assert "\\u003c/script\\u003e" in js
+    assert "\\u0026" in js
 
 
 def test_get_swagger_ui_init_js_escapes_single_quote_in_openapi_url():

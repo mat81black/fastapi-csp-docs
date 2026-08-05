@@ -38,7 +38,7 @@ repos:
 
       - id: local-mypy
         name: mypy check
-        entry: uv run mypy fastapi_csp_docs
+        entry: uv run mypy fastapi_csp_docs examples
         require_serial: true
         language: unsupported
         pass_filenames: false

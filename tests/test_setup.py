@@ -1,3 +1,6 @@
+import asyncio
+
+import httpx
 import pytest
 
 from fastapi import FastAPI
@@ -164,3 +167,31 @@ def test_setup_root_path_is_reflected_in_mounted_sub_app():
     redoc_html = client.get("/api/redoc").text
     assert "/api/openapi.json" in redoc_html
     assert "/api/redoc/redoc.css" in redoc_html
+
+
+async def test_setup_redoc_css_response_is_safe_to_reuse_across_concurrent_requests():
+    # _setup_redoc() builds redoc_css_response once and returns that same Response
+    # instance for every request; verify concurrent requests all still get the
+    # correct, uncorrupted body instead of racing on shared state.
+    app = FastAPI(docs_url=None, redoc_url=None)
+    fastapi_csp_docs.setup(app)
+
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as client:
+        responses = await asyncio.gather(*(client.get("/redoc/redoc.css") for _ in range(20)))
+
+    assert all(r.status_code == 200 for r in responses)
+    assert all(r.text == "body{margin:0;padding:0;}" for r in responses)
+
+
+async def test_setup_oauth2_redirect_js_response_is_safe_to_reuse_across_concurrent_requests():
+    # Same shared-singleton pattern as redoc_css_response, for
+    # oauth2_redirect_js_response in _setup_swagger_ui_oauth2_redirect().
+    app = FastAPI(docs_url=None, redoc_url=None)
+    fastapi_csp_docs.setup(app)
+
+    async with httpx.AsyncClient(transport=httpx.ASGITransport(app=app), base_url="http://test") as client:
+        responses = await asyncio.gather(*(client.get("/docs/oauth2-redirect.js") for _ in range(20)))
+
+    assert all(r.status_code == 200 for r in responses)
+    assert all(r.text == responses[0].text for r in responses)
+    assert "swaggerUIRedirectOauth2" in responses[0].text
