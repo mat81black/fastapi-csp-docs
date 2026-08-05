@@ -33,6 +33,9 @@ def setup(
     Read more about it in the
     [README](https://github.com/mat81black/fastapi-csp-docs#readme).
 
+    Silently skips wiring a route if `app.openapi_url` is `None` — there's no OpenAPI
+    schema for Swagger UI/ReDoc to render in that case.
+
     :param app: the FastAPI app to wire the docs routes onto.
     :param docs_url: path to serve Swagger UI at, or None to skip it.
     :param redoc_url: path to serve ReDoc at, or None to skip it.
