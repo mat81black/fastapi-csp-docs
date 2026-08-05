@@ -8,7 +8,7 @@ from fastapi_csp_docs.docs import (
 )
 from fastapi_csp_docs.setup import setup
 
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 __all__ = [
     "get_redoc_css",

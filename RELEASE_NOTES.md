@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 1.0.1 (2026-08-05)
+
 ### Internal
 
 * ✅ Add test for all runnable examples. PR [#36](https://github.com/mat81black/fastapi-csp-docs/pull/36) by [@mat81black](https://github.com/mat81black).
