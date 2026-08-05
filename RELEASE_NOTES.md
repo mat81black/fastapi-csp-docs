@@ -4,6 +4,7 @@
 
 ### Internal
 
+* 🐛 Reject invalid bump types and cover prepare_release's untested error paths. PR [#33](https://github.com/mat81black/fastapi-csp-docs/pull/33) by [@mat81black](https://github.com/mat81black).
 * 🐛 Fix partial release state when release notes update fails. PR [#32](https://github.com/mat81black/fastapi-csp-docs/pull/32) by [@mat81black](https://github.com/mat81black).
 * 🔒️ Escape interpolated values in generated Swagger UI/ReDoc pages. PR [#31](https://github.com/mat81black/fastapi-csp-docs/pull/31) by [@mat81black](https://github.com/mat81black).
 * ✅ Prove PR test changes actually catch a regression before merging. PR [#30](https://github.com/mat81black/fastapi-csp-docs/pull/30) by [@mat81black](https://github.com/mat81black).
