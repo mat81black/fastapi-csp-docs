@@ -12,7 +12,7 @@ pinned CDN URLs for the ReDoc runtime styles) and lives entirely in that file.
 from collections.abc import Awaitable, Callable
 
 from fastapi import Request
-from starlette.responses import Response
+from fastapi.responses import Response
 
 # These must match the defaults fastapi_csp_docs.setup() actually loads internally --
 # get_swagger_ui_html()/get_redoc_html() in fastapi_csp_docs/docs.py. setup() doesn't accept
