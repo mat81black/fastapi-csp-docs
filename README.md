@@ -36,7 +36,7 @@ uv add fastapi-csp-docs
 
 ```python
 from fastapi import FastAPI, Request
-from starlette.responses import Response
+from fastapi.responses import Response
 
 import fastapi_csp_docs
 

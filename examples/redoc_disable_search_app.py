@@ -20,7 +20,7 @@ one directive.
 from collections.abc import Awaitable, Callable
 
 from fastapi import FastAPI, Request
-from starlette.responses import HTMLResponse, Response
+from fastapi.responses import HTMLResponse, Response
 
 import fastapi_csp_docs
 
