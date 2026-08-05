@@ -35,7 +35,7 @@ def test_get_swagger_ui_init_js_embeds_openapi_url_and_defaults():
 
     assert response.headers["content-type"].startswith("text/javascript")
     js = bytes(response.body).decode()
-    assert "url: '/openapi.json'" in js
+    assert 'url: "/openapi.json"' in js
     assert '"dom_id": "#swagger-ui"' in js
 
 
@@ -79,6 +79,50 @@ def test_get_swagger_ui_init_js_escapes_html_special_characters():
 
     assert "</script><script>" not in js
     assert "\\u003c/script\\u003e" in js
+
+
+def test_get_swagger_ui_init_js_escapes_single_quote_in_openapi_url():
+    js = bytes(
+        fastapi_csp_docs.get_swagger_ui_init_js(
+            openapi_url="/openapi.json'; alert(1); //",
+        ).body
+    ).decode()
+
+    assert 'url: "/openapi.json\'; alert(1); //",' in js
+
+
+def test_get_swagger_ui_init_js_escapes_single_quote_in_oauth2_redirect_url():
+    js = bytes(
+        fastapi_csp_docs.get_swagger_ui_init_js(
+            openapi_url="/openapi.json",
+            oauth2_redirect_url="'; alert(1); //",
+        ).body
+    ).decode()
+
+    assert 'oauth2RedirectUrl: window.location.origin + "\'; alert(1); //",' in js
+
+
+def test_get_swagger_ui_html_escapes_title_and_urls():
+    html = bytes(
+        fastapi_csp_docs.get_swagger_ui_html(
+            title="</title><script>t</script>",
+            swagger_js_url='"><script>j</script>',
+            swagger_css_url='"><script>c</script>',
+            swagger_favicon_url='"><script>f</script>',
+            swagger_ui_init_script_url='"><script>i</script>',
+        ).body
+    ).decode()
+
+    assert "<script>t</script>" not in html
+    assert "<script>j</script>" not in html
+    assert "<script>c</script>" not in html
+    assert "<script>f</script>" not in html
+    assert "<script>i</script>" not in html
+    assert "&lt;script&gt;t&lt;/script&gt;" in html
+    assert "&lt;script&gt;j&lt;/script&gt;" in html
+    assert "&lt;script&gt;c&lt;/script&gt;" in html
+    assert "&lt;script&gt;f&lt;/script&gt;" in html
+    assert "&lt;script&gt;i&lt;/script&gt;" in html
 
 
 def test_get_redoc_html_has_no_inline_style():
@@ -132,6 +176,42 @@ def test_get_redoc_html_search_enabled_by_default():
     assert "disable-search" not in html
 
 
+def test_get_redoc_html_escapes_title_and_openapi_url():
+    html = bytes(
+        fastapi_csp_docs.get_redoc_html(
+            openapi_url='"><script>alert(1)</script>',
+            title="</title><script>alert(1)</script>",
+            redoc_css_url="/redoc/redoc.css",
+        ).body
+    ).decode()
+
+    assert "<script>alert(1)</script>" not in html
+    assert "&lt;script&gt;alert(1)&lt;/script&gt;" in html
+    assert 'spec-url="&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;"' in html
+
+
+def test_get_redoc_html_escapes_remaining_urls():
+    html = bytes(
+        fastapi_csp_docs.get_redoc_html(
+            openapi_url="/openapi.json",
+            title="Test - ReDoc",
+            redoc_js_url='"><script>j</script>',
+            redoc_favicon_url='"><script>f</script>',
+            redoc_css_url='"><script>c</script>',
+            google_fonts_css_url='"><script>g</script>',
+        ).body
+    ).decode()
+
+    assert "<script>j</script>" not in html
+    assert "<script>f</script>" not in html
+    assert "<script>c</script>" not in html
+    assert "<script>g</script>" not in html
+    assert "&lt;script&gt;j&lt;/script&gt;" in html
+    assert "&lt;script&gt;f&lt;/script&gt;" in html
+    assert "&lt;script&gt;c&lt;/script&gt;" in html
+    assert "&lt;script&gt;g&lt;/script&gt;" in html
+
+
 def test_get_redoc_css_is_minimal_reset():
     response = fastapi_csp_docs.get_redoc_css()
 
@@ -148,6 +228,17 @@ def test_get_swagger_ui_oauth2_redirect_html_has_no_inline_script():
 
     assert "<script>" not in html
     assert '<script src="/docs/oauth2-redirect.js"></script>' in html
+
+
+def test_get_swagger_ui_oauth2_redirect_html_escapes_script_url():
+    html = bytes(
+        fastapi_csp_docs.get_swagger_ui_oauth2_redirect_html(
+            oauth2_redirect_script_url='"><script>alert(1)</script>',
+        ).body
+    ).decode()
+
+    assert "<script>alert(1)</script>" not in html
+    assert 'src="&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;"' in html
 
 
 def test_get_swagger_ui_oauth2_redirect_js_is_nonempty():

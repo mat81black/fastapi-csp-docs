@@ -1,3 +1,4 @@
+import html
 import json
 
 from typing import Any
@@ -44,14 +45,14 @@ def get_swagger_ui_init_js(
     js = f"""
     window.onload = function() {{
     const ui = SwaggerUIBundle({{
-        url: '{openapi_url}',
+        url: {_html_safe_json(openapi_url)},
     """
 
     for key, value in current_swagger_ui_parameters.items():
         js += f"{_html_safe_json(key)}: {_html_safe_json(jsonable_encoder(value))},\n"
 
     if oauth2_redirect_url:
-        js += f"oauth2RedirectUrl: window.location.origin + '{oauth2_redirect_url}',"
+        js += f"oauth2RedirectUrl: window.location.origin + {_html_safe_json(oauth2_redirect_url)},"
 
     js += """
     presets: [
@@ -97,25 +98,25 @@ def get_swagger_ui_html(
     :param swagger_ui_init_script_url: URL of the script that initializes Swagger UI, see
         [get_swagger_ui_init_js][fastapi_csp_docs.docs.get_swagger_ui_init_js].
     """
-    html = f"""
+    page = f"""
     <!DOCTYPE html>
     <html>
     <head>
     <meta charset="UTF-8">
-    <title>{title}</title>
+    <title>{html.escape(title)}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="{swagger_css_url}">
-    <link rel="shortcut icon" href="{swagger_favicon_url}">
+    <link type="text/css" rel="stylesheet" href="{html.escape(swagger_css_url)}">
+    <link rel="shortcut icon" href="{html.escape(swagger_favicon_url)}">
     </head>
     <body>
     <div id="swagger-ui"></div>
-    <script src="{swagger_js_url}" charset="UTF-8"></script>
+    <script src="{html.escape(swagger_js_url)}" charset="UTF-8"></script>
     <!-- `SwaggerUIBundle` is now available on the page -->
-    <script src="{swagger_ui_init_script_url}" charset="UTF-8"></script>
+    <script src="{html.escape(swagger_ui_init_script_url)}" charset="UTF-8"></script>
     </body>
     </html>
     """
-    return HTMLResponse(html)
+    return HTMLResponse(page)
 
 
 def get_redoc_html(
@@ -148,22 +149,22 @@ def get_redoc_html(
     :param disable_search: whether to disable ReDoc's client-side search box (and the Web
         Worker it runs in) — see the README section on `worker-src`.
     """
-    html = f"""
+    page = f"""
     <!DOCTYPE html>
     <html>
     <head>
-    <title>{title}</title>
+    <title>{html.escape(title)}</title>
     <!-- needed for adaptive design -->
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     """
     if with_google_fonts:
-        html += f"""
-    <link href="{google_fonts_css_url}" rel="stylesheet">
+        page += f"""
+    <link href="{html.escape(google_fonts_css_url)}" rel="stylesheet">
     """
-    html += f"""
-    <link rel="shortcut icon" href="{redoc_favicon_url}">
-    <link rel="stylesheet" type="text/css" href="{redoc_css_url}">
+    page += f"""
+    <link rel="shortcut icon" href="{html.escape(redoc_favicon_url)}">
+    <link rel="stylesheet" type="text/css" href="{html.escape(redoc_css_url)}">
     <!--
     ReDoc doesn't change outer page styles
     -->
@@ -172,12 +173,12 @@ def get_redoc_html(
     <noscript>
         ReDoc requires Javascript to function. Please enable it to browse the documentation.
     </noscript>
-    <redoc spec-url="{openapi_url}"{' disable-search="true"' if disable_search else ""}></redoc>
-    <script src="{redoc_js_url}"> </script>
+    <redoc spec-url="{html.escape(openapi_url)}"{' disable-search="true"' if disable_search else ""}></redoc>
+    <script src="{html.escape(redoc_js_url)}"> </script>
     </body>
     </html>
     """
-    return HTMLResponse(html)
+    return HTMLResponse(page)
 
 
 def get_redoc_css() -> Response:
@@ -205,18 +206,18 @@ def get_swagger_ui_oauth2_redirect_html(
     :param oauth2_redirect_script_url: URL of the OAuth2 redirect script, see
         [get_swagger_ui_oauth2_redirect_js][fastapi_csp_docs.docs.get_swagger_ui_oauth2_redirect_js].
     """
-    html = f"""
+    page = f"""
     <!doctype html>
     <html lang="en-US">
     <head>
         <title>Swagger UI: OAuth2 Redirect</title>
     </head>
     <body>
-    <script src="{oauth2_redirect_script_url}"></script>
+    <script src="{html.escape(oauth2_redirect_script_url)}"></script>
     </body>
     </html>
     """
-    return HTMLResponse(content=html)
+    return HTMLResponse(content=page)
 
 
 def get_swagger_ui_oauth2_redirect_js() -> Response:
