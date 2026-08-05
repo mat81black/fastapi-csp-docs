@@ -4,6 +4,7 @@
 
 ### Internal
 
+* 🐛 Fix partial release state when release notes update fails. PR [#32](https://github.com/mat81black/fastapi-csp-docs/pull/32) by [@mat81black](https://github.com/mat81black).
 * 🔒️ Escape interpolated values in generated Swagger UI/ReDoc pages. PR [#31](https://github.com/mat81black/fastapi-csp-docs/pull/31) by [@mat81black](https://github.com/mat81black).
 * ✅ Prove PR test changes actually catch a regression before merging. PR [#30](https://github.com/mat81black/fastapi-csp-docs/pull/30) by [@mat81black](https://github.com/mat81black).
 * ⬆️ Bump tiangolo/latest-changes to 0.7.1. PR [#29](https://github.com/mat81black/fastapi-csp-docs/pull/29) by [@mat81black](https://github.com/mat81black).
