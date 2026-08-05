@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ✅ Add test for all runnable examples. PR [#36](https://github.com/mat81black/fastapi-csp-docs/pull/36) by [@mat81black](https://github.com/mat81black).
 * ✅ Close remaining test coverage gaps in the package. PR [#35](https://github.com/mat81black/fastapi-csp-docs/pull/35) by [@mat81black](https://github.com/mat81black).
 * ♻️ Import Response types from fastapi in the remaining examples and README. PR [#34](https://github.com/mat81black/fastapi-csp-docs/pull/34) by [@mat81black](https://github.com/mat81black).
 * 🐛 Reject invalid bump types and cover prepare_release's untested error paths. PR [#33](https://github.com/mat81black/fastapi-csp-docs/pull/33) by [@mat81black](https://github.com/mat81black).
