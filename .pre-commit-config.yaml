@@ -45,7 +45,7 @@ repos:
 
       - id: local-ty
         name: ty check
-        entry: uv run ty check
+        entry: uv run ty check fastapi_csp_docs examples
         require_serial: true
         language: unsupported
         pass_filenames: false
