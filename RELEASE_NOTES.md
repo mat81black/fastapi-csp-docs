@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* 🐛 Fix partial release state when release notes write fails. PR [#38](https://github.com/mat81black/fastapi-csp-docs/pull/38) by [@mat81black](https://github.com/mat81black).
+
 ## 1.0.1 (2026-08-05)
 
 ### Internal
