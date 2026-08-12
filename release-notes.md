@@ -4,6 +4,7 @@
 
 ### Internal
 
+* 👷 Tag CI action pins for sync tracking. PR [#41](https://github.com/mat81black/fastapi-csp-docs/pull/41) by [@mat81black](https://github.com/mat81black).
 * 👷 Sync CI, pre-commit, and release scripts workflows with the latest template. PR [#40](https://github.com/mat81black/fastapi-csp-docs/pull/40) by [@mat81black](https://github.com/mat81black).
 * 🐛 Fix release date defaulting to the date the script was imported. PR [#39](https://github.com/mat81black/fastapi-csp-docs/pull/39) by [@mat81black](https://github.com/mat81black).
 * 🐛 Fix partial release state when release notes write fails. PR [#38](https://github.com/mat81black/fastapi-csp-docs/pull/38) by [@mat81black](https://github.com/mat81black).
