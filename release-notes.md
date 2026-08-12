@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 1.0.2 (2026-08-12)
+
 ### Internal
 
 * 👷 Tag CI action pins for sync tracking. PR [#41](https://github.com/mat81black/fastapi-csp-docs/pull/41) by [@mat81black](https://github.com/mat81black).
