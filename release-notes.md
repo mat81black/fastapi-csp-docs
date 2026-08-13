@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Docs
+
+* 📝 Fix release notes link still pointing to the old uppercase filename. PR [#44](https://github.com/mat81black/fastapi-csp-docs/pull/44) by [@mat81black](https://github.com/mat81black).
+
 ### Internal
 
 * 👷 Replace actions/labeler with Latest Changes App auto-labeling. PR [#43](https://github.com/mat81black/fastapi-csp-docs/pull/43) by [@mat81black](https://github.com/mat81black).
