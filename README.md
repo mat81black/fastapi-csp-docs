@@ -135,7 +135,7 @@ Raises `RuntimeError` if `app.docs_url`/`app.redoc_url` is still set for the mod
 
 ## Release Notes
 
-See [RELEASE_NOTES](https://github.com/mat81black/fastapi-csp-docs/blob/main/RELEASE_NOTES.md).
+See [RELEASE_NOTES](https://github.com/mat81black/fastapi-csp-docs/blob/main/release-notes.md).
 
 ## License
 
