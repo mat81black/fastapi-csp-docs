@@ -8,6 +8,7 @@
 
 ### Internal
 
+* ⬆ Bump fastapi from 0.140.0 to 0.141.1. PR [#47](https://github.com/mat81black/fastapi-csp-docs/pull/47) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump the python-packages group with 9 updates. PR [#46](https://github.com/mat81black/fastapi-csp-docs/pull/46) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump the github-actions group with 2 updates. PR [#45](https://github.com/mat81black/fastapi-csp-docs/pull/45) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Replace actions/labeler with Latest Changes App auto-labeling. PR [#43](https://github.com/mat81black/fastapi-csp-docs/pull/43) by [@mat81black](https://github.com/mat81black).
