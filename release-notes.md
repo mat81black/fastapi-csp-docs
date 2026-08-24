@@ -8,6 +8,7 @@
 
 ### Internal
 
+* ⬆ Bump the github-actions group with 2 updates. PR [#45](https://github.com/mat81black/fastapi-csp-docs/pull/45) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 👷 Replace actions/labeler with Latest Changes App auto-labeling. PR [#43](https://github.com/mat81black/fastapi-csp-docs/pull/43) by [@mat81black](https://github.com/mat81black).
 
 ## 1.0.2 (2026-08-12)
