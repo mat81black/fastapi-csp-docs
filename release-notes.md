@@ -2,6 +2,8 @@
 
 ## Latest Changes
 
+## 1.0.3 (2026-09-22)
+
 ### Docs
 
 * 📝 Fix release notes link still pointing to the old uppercase filename. PR [#44](https://github.com/mat81black/fastapi-csp-docs/pull/44) by [@mat81black](https://github.com/mat81black).
