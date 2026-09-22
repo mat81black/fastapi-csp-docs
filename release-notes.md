@@ -8,6 +8,7 @@
 
 ### Internal
 
+* ⬆ Bump anyio from 4.14.1 to 4.14.2. PR [#51](https://github.com/mat81black/fastapi-csp-docs/pull/51) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump the python-packages group with 8 updates. PR [#54](https://github.com/mat81black/fastapi-csp-docs/pull/54) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump the github-actions group with 3 updates. PR [#53](https://github.com/mat81black/fastapi-csp-docs/pull/53) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🐛 Tolerate anyio's BlockingPortal deprecation warning in tests. PR [#52](https://github.com/mat81black/fastapi-csp-docs/pull/52) by [@mat81black](https://github.com/mat81black).
