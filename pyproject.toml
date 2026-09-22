@@ -136,7 +136,15 @@ addopts = [
     "--strict-markers",
 ]
 strict_xfail = true
-filterwarnings = ["error"]
+filterwarnings = [
+    "error",
+    # starlette.testclient reads anyio.abc.BlockingPortal at import time; anyio >=4.15
+    # deprecated that alias in favor of anyio.from_thread.BlockingPortal. This is
+    # starlette's alias to fix (https://github.com/Kludex/starlette/pull/3498), not ours,
+    # and anyio isn't a dependency we declare or control the version of. Remove this once
+    # the installed starlette no longer triggers the warning.
+    "default:The anyio.abc.BlockingPortal alias is deprecated:DeprecationWarning",
+]
 testpaths = ["tests"]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "session"
