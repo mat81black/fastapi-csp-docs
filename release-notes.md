@@ -8,6 +8,7 @@
 
 ### Internal
 
+* ⬆ Bump the github-actions group with 3 updates. PR [#53](https://github.com/mat81black/fastapi-csp-docs/pull/53) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * 🐛 Tolerate anyio's BlockingPortal deprecation warning in tests. PR [#52](https://github.com/mat81black/fastapi-csp-docs/pull/52) by [@mat81black](https://github.com/mat81black).
 * ⬆ Bump pre-commit hooks. PR [#50](https://github.com/mat81black/fastapi-csp-docs/pull/50) by [@mat81black](https://github.com/mat81black).
 * ⬆ Bump the python-packages group with 4 updates. PR [#49](https://github.com/mat81black/fastapi-csp-docs/pull/49) by [@dependabot[bot]](https://github.com/apps/dependabot).
