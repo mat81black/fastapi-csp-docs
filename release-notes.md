@@ -2,6 +2,10 @@
 
 ## Latest Changes
 
+### Internal
+
+* ⬆ Bump the github-actions group with 2 updates. PR [#56](https://github.com/mat81black/fastapi-csp-docs/pull/56) by [@dependabot[bot]](https://github.com/apps/dependabot).
+
 ## 1.0.3 (2026-09-22)
 
 ### Docs
