@@ -4,6 +4,7 @@
 
 ### Internal
 
+* ⬆ Bump the python-packages group with 4 updates. PR [#58](https://github.com/mat81black/fastapi-csp-docs/pull/58) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump the python-packages group with 3 updates. PR [#57](https://github.com/mat81black/fastapi-csp-docs/pull/57) by [@dependabot[bot]](https://github.com/apps/dependabot).
 * ⬆ Bump the github-actions group with 2 updates. PR [#56](https://github.com/mat81black/fastapi-csp-docs/pull/56) by [@dependabot[bot]](https://github.com/apps/dependabot).
 
